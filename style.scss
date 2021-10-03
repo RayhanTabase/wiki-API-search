@@ -1,0 +1,94 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    background: #092B40;
+    color:white;
+}
+
+.body{
+    width: 100%;
+    min-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-transparent{
+    background: none;
+    outline: 0 !important;
+    border: 0;
+}
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+p{
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.search-result{
+    border: 2px solid black;
+    background: #c6cbce;
+    color: black;
+    padding: 1em;
+    margin-bottom: .5em;
+}
+
+#content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 15em;
+
+    #randomSearch{
+        margin-bottom: .5em;
+    }
+
+    #searchbox{
+        height:8em;
+        min-height: 8em;
+        margin-bottom: .5em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+input[type=text] {
+    width: 130px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+  
+input[type=text]:focus {
+    width: 100%;
+}
+
+
+#queryText-show{
+    width: 200px;
+    animation-name: show;
+    animation-duration: 2s;
+}
+@keyframes show{
+    from {width: 50px;}
+    to {width:200px;}
+}
+
+#queryText-hide{
+    width: 50px;
+    animation-name: hide;
+    animation-duration: 2s;
+}
+@keyframes hide{
+    from {width: 200px;}
+    to {width:50px;}
+}

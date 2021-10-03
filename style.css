@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #092B40;
+  color: white;
+}
+
+.body {
+  width: 100%;
+  min-height: 95vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.btn-transparent {
+  background: none;
+  outline: 0 !important;
+  border: 0;
+}
+
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+p {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.search-result {
+  border: 2px solid black;
+  background: #c6cbce;
+  color: black;
+  padding: 1em;
+  margin-bottom: .5em;
+}
+
+#content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 15em;
+}
+
+#content #randomSearch {
+  margin-bottom: .5em;
+}
+
+#content #searchbox {
+  height: 8em;
+  min-height: 8em;
+  margin-bottom: .5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+input[type=text] {
+  width: 130px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 100%;
+}
+
+#queryText-show {
+  width: 200px;
+  -webkit-animation-name: show;
+          animation-name: show;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+@-webkit-keyframes show {
+  from {
+    width: 50px;
+  }
+  to {
+    width: 200px;
+  }
+}
+
+@keyframes show {
+  from {
+    width: 50px;
+  }
+  to {
+    width: 200px;
+  }
+}
+
+#queryText-hide {
+  width: 50px;
+  -webkit-animation-name: hide;
+          animation-name: hide;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+@-webkit-keyframes hide {
+  from {
+    width: 200px;
+  }
+  to {
+    width: 50px;
+  }
+}
+
+@keyframes hide {
+  from {
+    width: 200px;
+  }
+  to {
+    width: 50px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
