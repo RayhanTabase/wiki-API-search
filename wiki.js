@@ -48,7 +48,7 @@ function Wiki() {
             <a id="randomSearch" href="https://en.wikipedia.org/wiki/Special:Random" target="_blank"><p>Click here for a random article</p></a>
             <div id="searchbox">
                 {showSearchBox?
-                <form onSubmit={searchWiki} action="#">
+                <form onSubmit={searchWiki}>
                     <div className="input-group mb-3">
                         <input type="search" id="queryText-show" className="form-control" placeholder="search" aria-label="search" aria-describedby="basic-addon2"></input>
                         <div className="input-group-append">
