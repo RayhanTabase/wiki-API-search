@@ -1,7 +1,4 @@
-# wiki-API-search
-search for wiki entries using wiki api
-
-# Wiki-API-search
+# Wiki search
 
 > An app which integrates with the Wikipedia API and allows users to search for wikipedia posts
 
