@@ -1,31 +1,60 @@
+function errorPage() {
+    const errorMessage = document.querySelector("#errorMessage");
+    const content = document.querySelector("#content");
+    errorMessage.style.display = 'block';
+    content.innerHTML = '';
+}
+
+function noResultsFound(show) {
+    const noResults = document.querySelector("#noResultFound");
+    if (show){
+        noResults.style.display ="block";
+        return;
+    }
+    noResults.style.display ="none";
+}
+
+function loadingContent(show) {
+    const loadingContent = document.querySelector("#loadingContent")
+    if(show){
+        loadingContent.style.display ="flex";
+        return;
+    }
+    loadingContent.style.display ="none";
+}
 
 function Wiki() {
     const [showSearchBox, setShowSearchBox] = React.useState(false)
     const [results, setResults] = React.useState([])
 
-    function searchWiki(){
-        let q = document.querySelector("#queryText-show").value.trim()
+    function searchWiki(e){
+        e.preventDefault()
+        const q = document.querySelector("#queryText-show").value.trim()
         if(!q){
             return 
+            
         }
+        noResultsFound(false)
+        loadingContent(true)
         let url = `https://en.wikipedia.org/w/rest.php/v1/search/page?q=${q}&limit=10`
-            $.ajax({
-                type: "GET",
-                url: url,
-                dataType: 'json',
-                success: function (data){
-                    setResults([ 
-                        ...data.pages.map(res=>{
-                            console.log(res)
-                            return {"id":res.id, "title":res.title, "excerpt":res.excerpt}
-                        })
-                    ])
-                },
-                error: function (error){
-                    console.error(error);
-                }
-            });
-        return false
+        $.ajax({
+            type: "GET",
+            url: url,
+            dataType: 'json',
+            success: function (data){
+                if (data.pages.length < 1) noResultsFound(true)
+                setResults([ 
+                    ...data.pages.map(res=>{
+                        return {"id":res.id, "title":res.title, "excerpt":res.excerpt}
+                    })
+                ])
+                loadingContent(false)
+            },
+            error: function (){
+                errorPage()
+                loadingContent(false)
+            }
+        });
     }
 
     function displaySearchInput(){
@@ -45,7 +74,7 @@ function Wiki() {
   
     return(
         <React.Fragment>
-            <a id="randomSearch" href="https://en.wikipedia.org/wiki/Special:Random" target="_blank"><p>Click here for a random article</p></a>
+            <a id="randomSearch" href="https://en.wikipedia.org/wiki/Special:Random" target="_blank"><p class="randomArticle">Click here for a random article</p></a>
             <div id="searchbox">
                 {showSearchBox?
                 <form onSubmit={searchWiki}>
@@ -84,6 +113,7 @@ function Wiki() {
                 })}
             </div>
         </React.Fragment>
+
     );
 }
 

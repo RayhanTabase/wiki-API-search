@@ -1,11 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Gluten:wght@600;700&family=Lato:wght@300&display=swap");
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
-  background: #092B40;
-  color: white;
+  font-family: "Lato", sans-serif;
+  color: #272a31;
+  background: #cacaca;
+  margin-top: 3em;
+  margin-left: 1em;
+  margin-right: 1em;
+  font-family: "Gluten", cursive;
+  font-style: normal;
+  line-height: 2rem;
 }
 
 .body {
@@ -147,5 +155,43 @@ input[type=text]:focus {
   to {
     width: 50px;
   }
+}
+
+.screenMessage {
+  display: none;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+#errorMessage {
+  color: #b82d2d;
+}
+
+#noResultFound {
+  font-size: 1.5rem;
+}
+
+#loadingContent {
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 120vh;
+  background-color: #232b258a;
+  position: absolute;
+  z-index: 300;
+  top: 0;
+  color: #ec5242;
+  font-size: 1.5rem;
+}
+
+.randomArticle {
+  color: #ec5242;
 }
 /*# sourceMappingURL=style.css.map */
